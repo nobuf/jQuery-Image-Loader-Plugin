@@ -1,0 +1,9 @@
+jQuery Image Loader Plugin
+==========================
+
+This plugin makes images show spinner first, then actual image as <img /> or background-image with CSS.
+
+Similar projects
+
+* http://jqueryfordesigners.com/image-loading/
+* https://gist.github.com/797120/7176db676f1e0e20d7c23933f9fc655c2f120c58

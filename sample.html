@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery.imageLoader.js Sample</title>
+<style>
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+td {
+    padding:0;
+    margin:0;
+}
+td.loading {
+    background:transparent url(ajax-loader.gif) no-repeat center center; /* thanks http://ajaxload.info/ */
+}
+td.image {
+    width:500px;
+    height:375px;
+}
+td.imageBackground {
+    background-repeat:no-repeat;
+    vertical-align:top;
+}
+td.imageBackground div {
+    background:black;
+    color:white;
+    opacity:0.8;
+}
+td.broken {
+    text-align:center;
+}
+td.broken::after {
+    content:'Broken image...';
+}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="jquery.imageloader.js"></script>
+<script>
+$(document).ready(function(){
+    $('td.image').imageLoader();
+    $('td.imageBackground').imageLoader({useBackgroundImage:true});
+});
+</script>
+</head>
+<body>
+<h1>jQuery.imageLoader.js Sample</h1>
+<p><a href="jquery.imageloader.js">View source</a></p>
+<table>
+    <tr>
+        <td data-image="http://farm1.static.flickr.com/154/414583413_104aa7744d_z.jpg" class="image"></td>
+        <td data-image="http://farm1.static.flickr.com/161/414583385_dc98123dea_z.jpg" class="image"></td>
+    </tr>
+    <tr>
+        <td data-image="http://farm1.static.flickr.com/126/392649147_d36c3bed6a_z.jpg" class="imageBackground"><div>Hello!</div></td>
+        <td data-image="broken.jpg" class="image"></td><!-- will be broken -->
+    </tr>
+</table>
+</body>
+</html>
